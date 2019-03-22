@@ -3,7 +3,7 @@ import requests
 
 def main():
     n = 0
-    for i in range(5):
+    for i in range(2):
         response = requests.request(
             "GET", url, headers=headers, params=querystring)
 
