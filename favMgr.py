@@ -4,7 +4,7 @@ import pandas as pd
 
 
 def main():
-
+    # TODO:可指定更新方法是累计更新还是全部更新
     # 读取必要信息，包括request参数，url，列信息等
     with open('doc/info.json', 'r', encoding='utf-8') as f:
         info = json.load(f)
@@ -17,6 +17,7 @@ def main():
 
     fav_list, err = get_fav_list(url, headers, querystring, tags_keys)
 
+    # TODO:通过输入来指定保存类型
     if err == '':
         make_table(fav_list, tags_values)
         # make_html(fav_list, tags_values)
@@ -51,6 +52,7 @@ def get_fav_list(url, headers, querystring, tags):
     n = 1
 
     while True:
+        # TODO:重构下方代码
         response = requests.request(
             "GET", url, headers=headers, params=querystring)
 
